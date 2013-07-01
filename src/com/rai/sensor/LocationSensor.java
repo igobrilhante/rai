@@ -1,13 +1,19 @@
 package com.rai.sensor;
 
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 
+import android.app.Service;
+import android.content.Intent;
+import android.location.LocationManager;
+import android.os.Binder;
+import android.os.IBinder;
+import android.util.Log;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesClient;
 import com.google.android.gms.location.LocationClient;
 import com.google.android.gms.location.LocationRequest;
-import com.rai.context.Context.ContextEnum;
 import com.rai.context.ContextManager;
 
 
@@ -21,12 +27,18 @@ import android.os.Bundle;
  * @author igobrilhante
  *
  */
-public class LocationSensor implements
+public class LocationSensor extends Service
+                            implements
 							LocationListener,
 							GooglePlayServicesClient.ConnectionCallbacks,
 							GooglePlayServicesClient.OnConnectionFailedListener  {
 
-	
+
+    private static final String TAG = "LocationSensor";
+    String locationProvider = LocationManager.NETWORK_PROVIDER;
+
+    private LocationBinder binder = new LocationBinder();
+
     // A request to connect to Location Services
     private LocationRequest mLocationRequest;
 
@@ -35,6 +47,10 @@ public class LocationSensor implements
     
     // Manager the updates
     private ContextManager contextManager;
+
+
+    private LocationManager locationManager;
+
     
     /*
      * Note if updates have been turned on. Starts out as "false"; is set to "true" in the
@@ -43,10 +59,20 @@ public class LocationSensor implements
      */
     boolean mUpdatesRequested = false;
     
-    private LocationSensor(ContextManager contextManager){
+    public LocationSensor(){
     	// Create a new global location parameters object
-        mLocationRequest = LocationRequest.create();
-        this.contextManager = contextManager;
+        mLocationRequest        = LocationRequest.create();
+        this.contextManager     = ContextManager.instance();
+        try{
+            Log.i(TAG,"LocationSensor");
+            this.locationManager    = (LocationManager) this.contextManager.getContext().getSystemService(LOCATION_SERVICE);
+            this.locationManager.requestLocationUpdates(locationProvider,0,0,this);
+            locationUpdate(this.locationManager.getLastKnownLocation(locationProvider));
+        }
+        catch (Exception e){
+            Log.e(TAG,"Exception ",e);
+        }
+
     }
     
 	/*
@@ -56,6 +82,7 @@ public class LocationSensor implements
      */
     @Override
     public void onConnected(Bundle bundle) {
+        Log.i(TAG,"onConnected");
 
         if (mUpdatesRequested) {
         }
@@ -67,6 +94,7 @@ public class LocationSensor implements
      */
     @Override
     public void onDisconnected() {
+        Log.i(TAG,"onDisconnected");
     }
 
     /*
@@ -82,29 +110,7 @@ public class LocationSensor implements
          * start a Google Play services activity that can resolve
          * error.
          */
-//        if (connectionResult.hasResolution()) {
-//            try {
-//
-////                 Start an Activity that tries to resolve the error
-//                connectionResult.startResolutionForResult(
-//                        this,
-//                        LocationUtils.CONNECTION_FAILURE_RESOLUTION_REQUEST);
-//
-//                /*
-//                * Thrown if Google Play services canceled the original
-//                * PendingIntent
-//                */
-//
-//            } catch (IntentSender.SendIntentException e) {
-//
-//                // Log the error
-//                e.printStackTrace();
-//            }
-//        } else {
-//
-////             If no resolution is available, display a dialog to the user with the error.
-//            showErrorDialog(connectionResult.getErrorCode());
-//        }
+
     }
 
     /**
@@ -114,24 +120,24 @@ public class LocationSensor implements
      */
     @Override
     public void onLocationChanged(Location location) {
+        Log.i(TAG,"onLocationChanged");
 
-        // Report to the UI that the location was updated
-//        mConnectionStatus.setText(R.string.location_updated);
+    	 onLocationChanged(location);
+    }
+    private void locationUpdate(Location location){
+        Log.i(TAG,"onLocationUpdate");
 
-        // In the UI, set the latitude and longitude to the value received
-//        mLatLng.setText(LocationUtils.getLatLng(this, location));
-    	
 //    	float accuracy 		= location.getAccuracy();
-    	double latitude 	= location.getLatitude();
-    	double longitude	= location.getLongitude();
+        Double latitude 	= location.getLatitude();
+        Double longitude	= location.getLongitude();
 //    	long time 			= location.getElapsedRealtimeNanos();
-    	Calendar c			= new GregorianCalendar();
+        Calendar c			= new GregorianCalendar();
 //    	c.setTimeInMillis(time);
-    	
-    	this.contextManager.putContextEntry(ContextEnum.LATITUDE, latitude);
-    	this.contextManager.putContextEntry(ContextEnum.LONGITUDE, longitude);
-    	this.contextManager.putContextEntry(ContextEnum.HOUR_OF_DAY, c.get(Calendar.HOUR_OF_DAY));
-    	
+
+
+        this.contextManager.putEntry("latitude", latitude.toString());
+        this.contextManager.putEntry("longitude", longitude.toString());
+        this.contextManager.putEntry("hour_of_day", (new Date().toString()));
     }
 
 	@Override
@@ -142,7 +148,7 @@ public class LocationSensor implements
 
 	@Override
 	public void onProviderEnabled(String provider) {
-		// TODO Auto-generated method stub
+        Log.i(TAG,"onProviderEnabled");
 		
 	}
 
@@ -152,4 +158,15 @@ public class LocationSensor implements
 		
 	}
 
+    @Override
+    public IBinder onBind(Intent intent) {
+        return this.binder;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    public class LocationBinder extends Binder{
+        public LocationSensor getService()
+        {
+            return LocationSensor.this;
+        }
+    }
 }
