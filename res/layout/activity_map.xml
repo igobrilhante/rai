@@ -8,7 +8,7 @@
               android:id="@+id/map"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:name="com.google.android.gms.maps.MapFragment"
+              android:name="com.google.android.gms.maps.SupportMapFragment"
               android:layout_alignParentLeft="true" android:layout_alignParentTop="true"/>
     <LinearLayout          android:layout_width="match_parent"
                            android:layout_height="match_parent" xmlns:android="http://schemas.android.com/apk/res/android">
@@ -119,8 +119,8 @@
                             android:layout_alignParentBottom="true" android:layout_marginBottom="60dp"
                             android:src="@drawable/ic_search"
                             android:scaleType="centerInside" android:adjustViewBounds="true"
-                            android:background="@drawable/blue_rectangle" android:layout_alignParentEnd="false"
-                            android:layout_alignParentStart="false" android:clickable="true"/>
+                            android:background="@drawable/blue_rectangle"
+                            android:clickable="true"/>
 
                     <ImageButton
                             android:layout_width="90dp"

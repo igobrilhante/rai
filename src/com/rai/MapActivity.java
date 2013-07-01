@@ -6,6 +6,7 @@ import android.os.Parcel;
 import android.app.Activity;
 import android.graphics.Color;
 
+import android.support.v4.app.FragmentActivity;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolygonOptions;
@@ -25,7 +27,7 @@ import com.rai.context.ContextManager;
 import com.rai.services.TwitterService;
 import com.rai.services.WeatherService;
 
-public class MapActivity extends Activity implements View.OnClickListener, View.OnHoverListener {
+public class MapActivity extends FragmentActivity implements View.OnClickListener {
 
     private final String TAG = "MapActivity";
 	private GoogleMap googleMaps;
@@ -46,7 +48,7 @@ public class MapActivity extends Activity implements View.OnClickListener, View.
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-<<<<<<< HEAD
+
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_map);
 
@@ -70,37 +72,14 @@ public class MapActivity extends Activity implements View.OnClickListener, View.
         this.down.setVisibility(View.VISIBLE);
 
         this.up.setOnClickListener(this);
-        this.up.setOnHoverListener(this);
+//        this.up.setOnHoverListener(this);
         this.down.setOnClickListener(this);
-        this.down.setOnHoverListener(this);
+//        this.down.setOnHoverListener(this);
         this.searchTweetsView.setOnClickListener(this);
 		
-		this.googleMaps = ((MapFragment)getFragmentManager().findFragmentById(R.id.map)).getMap();
+		this.googleMaps = ((SupportMapFragment)getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
 
-        updateWeather();;
-=======
-//		super.onCreate(savedInstanceState);
-//		setContentView(R.layout.activity_map);
-//		
-//		googleMaps = ((MapFragment)getFragmentManager().findFragmentById(R.id.map)).getMap();
-//		googleMaps.addMarker(new MarkerOptions()
-//					.position(new LatLng(-3.68, -41.0))
-//					.title(""));
-//		PolygonOptions p = new PolygonOptions();
-//		p.add(new LatLng(-3.68, -41.0),new LatLng(-3.69, -42.0),new LatLng(-3.699, -42.1),new LatLng(-3.688, -41.0),
-//				new LatLng(-3.687, -41.2),
-//				new LatLng(-3.685, -41.3),
-//				new LatLng(-3.68, -41.0));
-//		p.fillColor(Color.BLUE);
-//		p.strokeColor(Color.BLUE);
-//		
-//		googleMaps.addPolygon(p);
-//		googleMaps.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(0, 0)));
-//		googleMaps.setMyLocationEnabled(true);
-//		googleMaps.getUiSettings().setMyLocationButtonEnabled(true);
-//		googleMaps.getUiSettings().setCompassEnabled(true);
-		
->>>>>>> 308ba91ad75197c8140177d2be5234f4d5e3808c
+        updateWeather();
 
         hideMapControllers();
 	}
@@ -208,19 +187,19 @@ public class MapActivity extends Activity implements View.OnClickListener, View.
         googleMaps.getUiSettings().setZoomGesturesEnabled(false);
     }
 
-    @Override
-    public boolean onHover(View view, MotionEvent motionEvent) {
-        Log.i(TAG,"onHover "+motionEvent.getAction());
-        switch (motionEvent.getAction()){
-            case MotionEvent.ACTION_UP:
-                showMenu();
-                hideMapControllers();
-                return true;
-            case MotionEvent.ACTION_DOWN:
-                hideMenu();
-                showMapControllers();
-                return true;
-        }
-        return true;
-    }
+//    @Override
+//    public boolean onHover(View view, MotionEvent motionEvent) {
+//        Log.i(TAG,"onHover "+motionEvent.getAction());
+//        switch (motionEvent.getAction()){
+//            case MotionEvent.ACTION_UP:
+//                showMenu();
+//                hideMapControllers();
+//                return true;
+//            case MotionEvent.ACTION_DOWN:
+//                hideMenu();
+//                showMapControllers();
+//                return true;
+//        }
+//        return true;
+//    }
 }
