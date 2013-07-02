@@ -45,7 +45,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Fortaleza"
-                                    android:id="@+id/textView" android:textColor="#ffffff"
+                                    android:id="@+id/cityView" android:textColor="#ffffff"
                                     android:textColorHighlight="#ffffff" android:textSize="28dp"
                                     android:textStyle="bold" android:textAppearance="?android:attr/textAppearanceLarge"
                                     android:typeface="sans"
@@ -159,6 +159,12 @@
                             android:src="@drawable/ic_up"
                             android:background="@drawable/blue_rectangle" android:layout_marginRight="40dp"
                             android:layout_marginLeft="40dp"/>
+                <ProgressBar
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/mapProgressBar"
+                        android:layout_centerHorizontal="true" android:layout_alignParentTop="true"
+                        android:layout_marginTop="116dp" android:visibility="gone"/>
 
             </RelativeLayout>
             <!--<RelativeLayout-->

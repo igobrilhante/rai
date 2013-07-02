@@ -1,5 +1,9 @@
 package com.rai;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Parcel;
@@ -11,20 +15,21 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.maps.model.PolygonOptions;
-import com.google.android.gms.maps.model.PolygonOptionsCreator;
+import com.google.android.gms.maps.model.*;
 
 import android.view.Menu;
 import com.rai.context.ContextApp;
 import com.rai.context.ContextManager;
+import com.rai.services.GeoCoderService;
 import com.rai.services.TwitterService;
+import com.rai.services.VenueService;
 import com.rai.services.WeatherService;
 
 public class MapActivity extends FragmentActivity implements View.OnClickListener {
@@ -60,9 +65,15 @@ public class MapActivity extends FragmentActivity implements View.OnClickListene
         this.box1 = findViewById(R.id.box1);
         this.box1.setOnClickListener(this);
 
+        ((TextView)findViewById(R.id.cityView)).setText("");
+        ((TextView)findViewById(R.id.textViewDate)).setText("");
+        ((TextView)findViewById(R.id.textViewDegree)).setText("");
+
         this.box2 = findViewById(R.id.box2);
         this.box3 = findViewById(R.id.box3);
+        this.box3.setOnClickListener(this);
         this.box4 = findViewById(R.id.box4);
+        this.box4.setOnClickListener(this);
         this.searchTweetsView = findViewById(R.id.searchTweet);
 
         this.up = findViewById(R.id.up);
@@ -78,6 +89,46 @@ public class MapActivity extends FragmentActivity implements View.OnClickListene
         this.searchTweetsView.setOnClickListener(this);
 		
 		this.googleMaps = ((SupportMapFragment)getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
+        LatLng point = new LatLng(Double.parseDouble(this.contextManager.getValue("latitude").toString()),
+                Double.parseDouble(this.contextManager.getValue("longitude").toString()));
+        googleMaps.animateCamera(CameraUpdateFactory.newLatLngZoom(point,14f));
+
+        googleMaps.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+            @Override
+            public void onInfoWindowClick(final Marker marker) {
+                Log.i(TAG,"onInfoWindowClick");
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(MapActivity.this);
+                //define o titulo
+                builder.setTitle("Direção");
+                //define a mensagem
+                builder.setMessage("Buscar direção?");
+                //define um botão como positivo
+                builder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface arg0, int arg1) {
+                        try{
+                            Log.i(TAG,"Sim");
+                            String url = "geo:" + marker.getPosition().latitude + "," + marker.getPosition().longitude;
+                            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                            startActivity(intent);
+                        }
+                        catch (Exception e){
+                            Log.e(TAG,"Dialog yes",e);
+                        }
+                    }
+                });
+                //define um botão como negativo.
+                builder.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface arg0, int arg1) {
+                    }
+                });
+                //cria o AlertDialog
+                AlertDialog alerta = builder.create();
+                //Exibe
+                alerta.show();
+
+            }
+        });
 
         updateWeather();
 
@@ -114,7 +165,67 @@ public class MapActivity extends FragmentActivity implements View.OnClickListene
             searchTweets();
             return;
         }
+        if(view == box3){
+            searchVenue();
+            return;
+        }
+        if(view == box4){
+            searchVenueTag();
+            return;
+        }
     }
+
+    private void searchVenue(){
+        new VenueService(this).execute("near",contextManager.getValue("latitude"),contextManager.getValue("longitude"));
+        hideMenu();
+        showMapControllers();
+
+    }
+
+    private void searchVenueTag(){
+        Log.i(TAG,"searchVenueTag");
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(MapActivity.this);
+
+        builder.setTitle("Buscar Poi");
+        builder.setMessage("Digite uma tag (ex. sushi)");
+
+
+        final EditText input = new EditText(getApplicationContext());
+        builder.setView(input);
+
+        final MapActivity mf = this;
+
+        builder.setPositiveButton("Buscar", new DialogInterface.OnClickListener() {
+
+            public void onClick(DialogInterface arg0, int arg1) {
+                try{
+                    Log.i(TAG,"Sim");
+                    String tag = input.getText().toString();
+                    new VenueService(mf).execute("tag",tag);
+                    hideMenu();
+                    showMapControllers();
+
+                }
+                catch (Exception e){
+                    Log.e(TAG,"Dialog yes",e);
+                }
+            }
+        });
+
+
+        builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface arg0, int arg1) {
+            }
+        });
+
+        AlertDialog alert = builder.create();
+        alert.show();
+
+
+
+    }
+
 
     private void searchTweets(){
         String latitude     =   contextManager.getValue("latitude");
@@ -127,6 +238,7 @@ public class MapActivity extends FragmentActivity implements View.OnClickListene
     }
 
     private void updateWeather(){
+        new GeoCoderService(this).execute(contextManager.getValue("latitude"),contextManager.getValue("longitude"));
         new WeatherService(this).execute(contextManager.getValue("latitude"),contextManager.getValue("longitude"));
     }
 
@@ -186,6 +298,10 @@ public class MapActivity extends FragmentActivity implements View.OnClickListene
         googleMaps.getUiSettings().setZoomControlsEnabled(false);
         googleMaps.getUiSettings().setZoomGesturesEnabled(false);
     }
+
+
+
+
 
 //    @Override
 //    public boolean onHover(View view, MotionEvent motionEvent) {

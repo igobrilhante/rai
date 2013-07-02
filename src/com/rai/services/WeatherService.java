@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.util.Log;
 import android.view.ViewStub;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,7 +33,7 @@ import java.util.WeakHashMap;
  * To change this template use File | Settings | File Templates.
  */
 
-public class WeatherService  extends AbstractService {
+public class WeatherService  extends AbstractService<Map<String,String>> {
 
     private static final String TAG = "WeatherService";
     private String API = "811d5f0068823a1f95b9e6412ed32d56";
@@ -52,6 +53,9 @@ public class WeatherService  extends AbstractService {
     protected void onPreExecute(){
         ProgressBar bar = (ProgressBar)this.requester.findViewById(R.id.progressBarWeather);
         bar.setVisibility(ViewStub.VISIBLE);
+
+        LinearLayout linearLayout = (LinearLayout)this.requester.findViewById(R.id.box1);
+        linearLayout.setClickable(false);
     }
 
     @Override
@@ -108,6 +112,8 @@ public class WeatherService  extends AbstractService {
         ProgressBar bar = (ProgressBar)this.requester.findViewById(R.id.progressBarWeather);
         bar.setVisibility(ViewStub.GONE);
 
+        if(result !=null){
+
         String date        = result.get("date");
         String temperature = result.get("temperature");
         String humidity    = result.get("humidity");
@@ -122,6 +128,13 @@ public class WeatherService  extends AbstractService {
 //        humidityView.setText(humidity);
 
         Log.i(TAG, "RESULT ");
+        }
+        else{
+            Toast.makeText(this.requester.getApplicationContext(),"Não foi possível atualizar o clima",Toast.LENGTH_SHORT).show();
+        }
+
+        LinearLayout linearLayout = (LinearLayout)this.requester.findViewById(R.id.box1);
+        linearLayout.setClickable(true);
     }
 
     @Override

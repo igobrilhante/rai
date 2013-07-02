@@ -17,6 +17,7 @@
         <option name="device" value="2.7in QVGA" />
         <option name="deviceConfiguration" value="Portrait" />
         <option name="dockMode" value="" />
+        <option name="localeLanguage" value="en" />
         <option name="nightMode" value="notnight" />
         <option name="targetHashString" value="android-17" />
         <option name="theme" value="AppTheme" />
@@ -37,8 +38,8 @@
     </option>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="Weather" />
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="DEBUG" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="INFO" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="MapActivity" />
   </component>
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" name="Default" comment="" />
@@ -48,24 +49,37 @@
     <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372017070172" ignored="false" />
     <file path="$PROJECT_DIR$/.idea/modules.xml" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1371924194485" ignored="false" />
     <file path="$PROJECT_DIR$/.idea/vcs.xml" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1371924194485" ignored="false" />
-    <file path="/activity_map.xml" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372354459873" ignored="false" />
+    <file path="/activity_map.xml" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372724702115" ignored="false" />
     <file path="/fragment.java" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1371926911576" ignored="false" />
-    <file path="/MapActivity.java" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372719694631" ignored="false" />
-    <file path="/Dummy.txt" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372031575176" ignored="false" />
+    <file path="/MapActivity.java" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372741252579" ignored="false" />
+    <file path="/Dummy.txt" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372738708169" ignored="false" />
     <file path="/activity_map2.xml" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1371941468461" ignored="false" />
-    <file path="/WeatherService.java" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372351461751" ignored="false" />
+    <file path="/WeatherService.java" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372742112462" ignored="false" />
     <file path="/Weather.java" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372308016326" ignored="false" />
     <file path="/IService.java" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372033627146" ignored="false" />
     <file path="/ServiceController.java" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372045373850" ignored="false" />
     <file path="/ContextManager.java" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372347318812" ignored="false" />
-    <file path="/LocationSensor.java" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372346633958" ignored="false" />
+    <file path="/LocationSensor.java" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372724232705" ignored="false" />
     <file path="/Context.java" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372036459764" ignored="false" />
-    <file path="/AbstractService.java" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372345701001" ignored="false" />
+    <file path="/AbstractService.java" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372728934365" ignored="false" />
     <file path="/ContextApp.java" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372346311630" ignored="false" />
     <file path="/Utils.java" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372309370746" ignored="false" />
     <file path="/TwitterService.java" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372348697991" ignored="false" />
     <file path="/TwitterTest.java" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372348592257" ignored="false" />
     <file path="$PROJECT_DIR$/libs/google-play-services_lib/project.properties" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372719855355" ignored="false" />
+    <file path="/GeoCoderService.java" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372726718514" ignored="false" />
+    <file path="$PROJECT_DIR$/../rai-server/app/model/Recommendation.scala" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372727395327" ignored="false" />
+    <file path="/Recommendation.scala" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372727384310" ignored="false" />
+    <file path="$PROJECT_DIR$/../rai-server/app/model/Venue.scala" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372740167834" ignored="false" />
+    <file path="/Venue.scala" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372740118106" ignored="false" />
+    <file path="$PROJECT_DIR$/../rai-server/conf/routes" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372739949956" ignored="false" />
+    <file path="/routes" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372739949261" ignored="false" />
+    <file path="$PROJECT_DIR$/../rai-server/app/controllers/VenueController.scala" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372739079659" ignored="false" />
+    <file path="/VenueController.scala" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372739079659" ignored="false" />
+    <file path="/VenueService.java" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372742057123" ignored="false" />
+    <file path="$PROJECT_DIR$/../rai-server/conf/application.conf" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372734379838" ignored="false" />
+    <file path="/application.conf" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372734379838" ignored="false" />
+    <file path="$PROJECT_DIR$/../rai-server/target/scala-2.10/src_managed/main/controllers/routes.java" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372740012114" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,38 +139,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/rai/MainActivity.java">
+      <file leaf-file-name="GeoCoderService.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/rai/services/GeoCoderService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="13" selection-start="113" selection-end="113" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="31" column="72" selection-start="870" selection-end="890" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2311#2327#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ContextManager.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/rai/context/ContextManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="0" selection-start="780" selection-end="825" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LocationSensor.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/rai/sensor/LocationSensor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="110" selection-start="2110" selection-end="2110" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WeatherService.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="WeatherService.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/rai/services/WeatherService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="84" column="64" selection-start="2790" selection-end="2790" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="132" column="130" selection-start="4466" selection-end="4466" vertical-scroll-proportion="0.68874174">
+              <folding>
+                <element signature="e#2603#2619#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -164,23 +165,66 @@
       <file leaf-file-name="MapActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/rai/MapActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="179" column="103" selection-start="5304" selection-end="5304" vertical-scroll-proportion="0.0">
+            <state line="198" column="84" selection-start="6498" selection-end="6498" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#3278#4885#0" expanded="true" />
+                <element signature="e#3814#4457#0" expanded="true" />
+                <element signature="e#4438#4439#0" expanded="true" />
+                <element signature="e#4874#4875#0" expanded="true" />
+                <element signature="e#6954#6955#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VenueService.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/rai/services/VenueService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="159" column="132" selection-start="5265" selection-end="5265" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3206#3218#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JSONObject.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar:///Applications/adt-bundle-mac-x86_64/sdk/platforms/android-10/android.jar!/org/json/JSONObject.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="96" column="0" selection-start="4520" selection-end="4520" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_map.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="activity_map.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/activity_map.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="127" column="143" selection-start="8781" selection-end="8781" vertical-scroll-proportion="0.67247385">
-              <folding>
-                <element signature="tag#LinearLayout#0;tag#RelativeLayout#0;tag#LinearLayout#0;tag#RelativeLayout#0" expanded="false" />
-              </folding>
+          <provider editor-type-id="text-editor">
+            <state line="27" column="29" selection-start="1808" selection-end="1820" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
-          <provider editor-type-id="android-designer">
+          <provider selected="true" editor-type-id="android-designer">
             <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AbstractService.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/rai/services/AbstractService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="77" selection-start="169" selection-end="169" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ServiceController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/rai/services/ServiceController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="56" column="27" selection-start="1792" selection-end="1792" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -196,16 +240,7 @@
       <file leaf-file-name="TwitterService.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/rai/services/TwitterService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="45" selection-start="1868" selection-end="1868" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TwitterTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/rai/test/TwitterTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="58" selection-start="896" selection-end="922" vertical-scroll-proportion="0.0">
+            <state line="19" column="70" selection-start="500" selection-end="500" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -221,26 +256,27 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/rai/services/IService.java" />
-        <option value="$PROJECT_DIR$/src/com/rai/context/Context.java" />
         <option value="$PROJECT_DIR$/src/com/rai/services/ServiceController.java" />
         <option value="$PROJECT_DIR$/src/com/rai/services/Weather.java" />
         <option value="$PROJECT_DIR$/src/com/rai/utils/Utils.java" />
         <option value="$PROJECT_DIR$/twitter4j.properties" />
         <option value="$PROJECT_DIR$/src/com/rai/context/ContextApp.java" />
+        <option value="$PROJECT_DIR$/src/com/rai/test/TwitterTest.java" />
+        <option value="$PROJECT_DIR$/src/com/rai/context/ContextManager.java" />
+        <option value="$PROJECT_DIR$/res/layout/activity_map2.xml" />
         <option value="$PROJECT_DIR$/src/com/rai/sensor/LocationSensor.java" />
         <option value="$PROJECT_DIR$/src/com/rai/services/AbstractService.java" />
-        <option value="$PROJECT_DIR$/src/com/rai/test/TwitterTest.java" />
+        <option value="$PROJECT_DIR$/src/com/rai/services/GeoCoderService.java" />
         <option value="$PROJECT_DIR$/src/com/rai/services/TwitterService.java" />
-        <option value="$PROJECT_DIR$/src/com/rai/context/ContextManager.java" />
-        <option value="$PROJECT_DIR$/src/com/rai/services/WeatherService.java" />
-        <option value="$PROJECT_DIR$/src/com/rai/MapActivity.java" />
         <option value="$PROJECT_DIR$/res/layout/activity_map.xml" />
-        <option value="$PROJECT_DIR$/res/layout/activity_map2.xml" />
+        <option value="$PROJECT_DIR$/src/com/rai/MapActivity.java" />
+        <option value="$PROJECT_DIR$/src/com/rai/services/VenueService.java" />
+        <option value="$PROJECT_DIR$/src/com/rai/services/WeatherService.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="1" />
     <option name="y" value="22" />
     <option name="width" value="1858" />
     <option name="height" value="1058" />
@@ -329,28 +365,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rai" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rai" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rai" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="services" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -401,13 +415,13 @@
     <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/libs/twitter/twitter4j-stream-3.0.3.jar!/" />
-    <property name="AndroidLayoutSelectedEditor" value="text-editor" />
+    <property name="AndroidLayoutSelectedEditor" value="android-designer" />
     <property name="project.structure.side.proportion" value="0.18997669" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="4df1c57618bd5f95" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="NExus" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="MyAvd0" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
@@ -627,11 +641,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1858" height="1058" extended-state="6" />
+    <frame x="1" y="22" width="1858" height="1058" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22516556" sideWeight="0.6705757" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24172185" sideWeight="0.6705757" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22516556" sideWeight="0.673774" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24172185" sideWeight="0.673774" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294702" sideWeight="0.6705757" order="4" side_tool="false" content_ui="tabs" />
@@ -646,14 +660,14 @@
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942432" sideWeight="0.49779248" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32659575" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32622603" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25551876" sideWeight="0.6705757" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32942432" sideWeight="0.49779248" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25551876" sideWeight="0.673774" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942432" sideWeight="0.49779248" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -721,54 +735,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/rai/utils/Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="30" selection-start="299" selection-end="299" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="jar:///Applications/adt-bundle-mac-x86_64/sdk/platforms/android-17/android.jar!/android/os/AsyncTask.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="62" selection-start="1458" selection-end="1458" vertical-scroll-proportion="0.42595673" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/rai/services/twitter4j.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="66" selection-start="208" selection-end="250" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/rai/context/ContextApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="115" selection-end="121" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/rai/services/AbstractService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="86" selection-start="307" selection-end="325" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/rai/services/ServiceController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="27" selection-start="1792" selection-end="1792" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/rai/test/TwitterTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="58" selection-start="896" selection-end="922" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/rai/services/TwitterService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="45" selection-start="1868" selection-end="1868" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/rai/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="13" selection-start="113" selection-end="113" vertical-scroll-proportion="0.0">
@@ -776,9 +742,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/rai/sensor/LocationSensor.java">
+    <entry file="jar:///Applications/adt-bundle-mac-x86_64/sdk/platforms/android-10/android.jar!/android/os/AsyncTask.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="110" selection-start="2110" selection-end="2110" vertical-scroll-proportion="0.0">
+        <state line="29" column="62" selection-start="1239" selection-end="1239" vertical-scroll-proportion="0.49557522">
           <folding />
         </state>
       </provider>
@@ -790,6 +756,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///Applications/adt-bundle-mac-x86_64/sdk/platforms/android-10/android.jar!/android/location/Geocoder.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="0" selection-start="1040" selection-end="1040" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/rai/sensor/LocationSensor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="136" column="0" selection-start="4076" selection-end="4076" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/rai/services/GeoCoderService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="72" selection-start="870" selection-end="890" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2311#2327#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/rai/services/TwitterService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="70" selection-start="500" selection-end="500" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/rai/services/Weather.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="182" selection-start="423" selection-end="423" vertical-scroll-proportion="0.0">
@@ -797,28 +794,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/rai/services/WeatherService.java">
+    <entry file="file://$PROJECT_DIR$/src/com/rai/services/AbstractService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="64" selection-start="2790" selection-end="2790" vertical-scroll-proportion="0.0">
+        <state line="10" column="77" selection-start="169" selection-end="169" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/rai/services/ServiceController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="27" selection-start="1792" selection-end="1792" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Applications/adt-bundle-mac-x86_64/sdk/platforms/android-10/android.jar!/org/json/JSONObject.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="96" column="0" selection-start="4520" selection-end="4520" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_map.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state line="27" column="29" selection-start="1808" selection-end="1820" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/rai/MapActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="179" column="103" selection-start="5304" selection-end="5304" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="198" column="84" selection-start="6498" selection-end="6498" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#3278#4885#0" expanded="true" />
+            <element signature="e#3814#4457#0" expanded="true" />
+            <element signature="e#4438#4439#0" expanded="true" />
+            <element signature="e#4874#4875#0" expanded="true" />
+            <element signature="e#6954#6955#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/activity_map.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/com/rai/services/VenueService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="127" column="143" selection-start="8781" selection-end="8781" vertical-scroll-proportion="0.67247385">
+        <state line="159" column="132" selection-start="5265" selection-end="5265" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="tag#LinearLayout#0;tag#RelativeLayout#0;tag#LinearLayout#0;tag#RelativeLayout#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#3206#3218#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/rai/services/WeatherService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="132" column="130" selection-start="4466" selection-end="4466" vertical-scroll-proportion="0.68874174">
+          <folding>
+            <element signature="e#2603#2619#0" expanded="true" />
           </folding>
         </state>
       </provider>

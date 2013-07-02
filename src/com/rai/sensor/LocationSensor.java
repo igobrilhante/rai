@@ -6,6 +6,7 @@ import java.util.GregorianCalendar;
 
 import android.app.Service;
 import android.content.Intent;
+import android.location.Geocoder;
 import android.location.LocationManager;
 import android.os.Binder;
 import android.os.IBinder;
@@ -133,7 +134,6 @@ public class LocationSensor extends Service
 //    	long time 			= location.getElapsedRealtimeNanos();
         Calendar c			= new GregorianCalendar();
 //    	c.setTimeInMillis(time);
-
 
         this.contextManager.putEntry("latitude", latitude.toString());
         this.contextManager.putEntry("longitude", longitude.toString());

@@ -17,7 +17,7 @@ import java.util.Map;
  * Time: 10:58
  * To change this template use File | Settings | File Templates.
  */
-public class TwitterService extends AbstractService {
+public class TwitterService extends AbstractService<Map<String,String>> {
 
     private Twitter twitter;
     private Context context;
