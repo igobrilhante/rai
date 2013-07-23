@@ -199,9 +199,11 @@ public class MapActivity extends FragmentActivity implements View.OnClickListene
     }
 
     private void searchVenue(){
-        new VenueService(this).execute("near",contextManager.getString("latitude"),contextManager.getString("longitude"));
-        hideMenu();
-        showMapControllers();
+//        new VenueService(this).execute("near",contextManager.getString("latitude"),contextManager.getString("longitude"));
+//        hideMenu();
+//        showMapControllers();
+        Intent intent = new Intent(getApplicationContext(),RecommendationActivity.class);
+        startActivity(intent);
 
     }
 

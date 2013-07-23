@@ -21,6 +21,8 @@ public class MainActivity extends Activity {
         String user = contextManager.getString("user");
         if(!user.equals("")){
             Log.i(TAG,"User found");
+            Intent mapActivity = new Intent(getApplicationContext(),MapActivity.class);
+            startActivity(mapActivity);
 
         }
         else{

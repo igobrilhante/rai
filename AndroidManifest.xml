@@ -52,6 +52,7 @@
 
         </activity>
         <activity android:name=".WebActivity"/>
+        <activity android:name=".RecommendationActivity"/>
 
         <!-- Meta Data  -->
         <!-- Google Mas v2  -->
