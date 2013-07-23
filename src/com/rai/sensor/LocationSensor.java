@@ -6,8 +6,7 @@ import java.util.GregorianCalendar;
 
 import android.app.Service;
 import android.content.Intent;
-import android.location.Geocoder;
-import android.location.LocationManager;
+import android.location.*;
 import android.os.Binder;
 import android.os.IBinder;
 import android.util.Log;
@@ -18,8 +17,6 @@ import com.google.android.gms.location.LocationRequest;
 import com.rai.context.ContextManager;
 
 
-import android.location.Location;
-import android.location.LocationListener;
 import android.os.Bundle;
 
 /**
@@ -36,7 +33,7 @@ public class LocationSensor extends Service
 
 
     private static final String TAG = "LocationSensor";
-    String locationProvider = LocationManager.NETWORK_PROVIDER;
+    public  String locationProvider = LocationManager.GPS_PROVIDER;
 
     private LocationBinder binder = new LocationBinder();
 
@@ -49,6 +46,8 @@ public class LocationSensor extends Service
     // Manager the updates
     private ContextManager contextManager;
 
+    private Criteria criteria = new Criteria();
+
 
     private LocationManager locationManager;
 
@@ -59,7 +58,15 @@ public class LocationSensor extends Service
      *
      */
     boolean mUpdatesRequested = false;
-    
+
+    public LocationManager getLocationManager() {
+        return locationManager;
+    }
+
+    public String getLocationProvider() {
+        return locationProvider;
+    }
+
     public LocationSensor(){
     	// Create a new global location parameters object
         mLocationRequest        = LocationRequest.create();
@@ -67,8 +74,10 @@ public class LocationSensor extends Service
         try{
             Log.i(TAG,"LocationSensor");
             this.locationManager    = (LocationManager) this.contextManager.getContext().getSystemService(LOCATION_SERVICE);
-            this.locationManager.requestLocationUpdates(locationProvider,0,0,this);
-            locationUpdate(this.locationManager.getLastKnownLocation(locationProvider));
+
+            this.locationManager.requestLocationUpdates(locationProvider, 0, 0, this);
+            onLocationUpdate(this.locationManager.getLastKnownLocation(locationProvider));
+
         }
         catch (Exception e){
             Log.e(TAG,"Exception ",e);
@@ -123,21 +132,17 @@ public class LocationSensor extends Service
     public void onLocationChanged(Location location) {
         Log.i(TAG,"onLocationChanged");
 
-    	 onLocationChanged(location);
+        onLocationUpdate(location);
     }
-    private void locationUpdate(Location location){
-        Log.i(TAG,"onLocationUpdate");
 
-//    	float accuracy 		= location.getAccuracy();
+    private void onLocationUpdate(Location location){
         Double latitude 	= location.getLatitude();
         Double longitude	= location.getLongitude();
-//    	long time 			= location.getElapsedRealtimeNanos();
-        Calendar c			= new GregorianCalendar();
-//    	c.setTimeInMillis(time);
+        GregorianCalendar gregorianCalendar = new GregorianCalendar();
 
-        this.contextManager.putEntry("latitude", latitude.toString());
-        this.contextManager.putEntry("longitude", longitude.toString());
-        this.contextManager.putEntry("hour_of_day", (new Date().toString()));
+        this.contextManager.getPreferences().edit().putString("latitude", latitude.toString()).commit();
+        this.contextManager.getPreferences().edit().putString("longitude", longitude.toString()).commit();
+        this.contextManager.getPreferences().edit().putString("days_week", Integer.toString(gregorianCalendar.get(Calendar.DAY_OF_WEEK))).commit();
     }
 
 	@Override
@@ -145,6 +150,16 @@ public class LocationSensor extends Service
 		// TODO Auto-generated method stub
 		
 	}
+
+//    private String convert(int date){
+//        switch (date){
+//            case 0: return "sunday";
+//            case 1: return "monday";
+//            case 2: return  "tuesdat";
+//            case3: return
+//        }
+//        return "";
+//    }
 
 	@Override
 	public void onProviderEnabled(String provider) {
@@ -154,6 +169,7 @@ public class LocationSensor extends Service
 
 	@Override
 	public void onStatusChanged(String provider, int status, Bundle extras) {
+        Log.i(TAG,"onStatusChanged");
 		// TODO Auto-generated method stub
 		
 	}

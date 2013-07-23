@@ -3,6 +3,7 @@ package com.rai;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -44,6 +45,7 @@ public class MapActivity extends FragmentActivity implements View.OnClickListene
     private View    box3;
     private View    box4;
     private View    searchTweetsView;
+    private View    contentView;
 
     private int screenWidth  = 0;
     private int screenHeight = 0;
@@ -76,6 +78,8 @@ public class MapActivity extends FragmentActivity implements View.OnClickListene
         this.box4.setOnClickListener(this);
         this.searchTweetsView = findViewById(R.id.searchTweet);
 
+        this.contentView = findViewById(R.id.content);
+
         this.up = findViewById(R.id.up);
         this.up.setVisibility(View.GONE);
 
@@ -89,8 +93,8 @@ public class MapActivity extends FragmentActivity implements View.OnClickListene
         this.searchTweetsView.setOnClickListener(this);
 		
 		this.googleMaps = ((SupportMapFragment)getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
-        LatLng point = new LatLng(Double.parseDouble(this.contextManager.getValue("latitude").toString()),
-                Double.parseDouble(this.contextManager.getValue("longitude").toString()));
+        LatLng point = new LatLng(Double.parseDouble(this.contextManager.getString("latitude")),
+                Double.parseDouble(this.contextManager.getString("longitude")));
         googleMaps.animateCamera(CameraUpdateFactory.newLatLngZoom(point,14f));
 
         googleMaps.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
@@ -133,7 +137,14 @@ public class MapActivity extends FragmentActivity implements View.OnClickListene
         updateWeather();
 
         hideMapControllers();
+
+        showMenu();
 	}
+
+    @Override
+    public void onStop(){
+        super.onStop();
+    }
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -141,6 +152,18 @@ public class MapActivity extends FragmentActivity implements View.OnClickListene
 		getMenuInflater().inflate(R.menu.map, menu);
 		return true;
 	}
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        this.contextManager.requestUpdateLocation();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        this.contextManager.removeUpdateLocation();
+    }
 
 
     @Override
@@ -162,7 +185,7 @@ public class MapActivity extends FragmentActivity implements View.OnClickListene
             return;
         }
         if(view == searchTweetsView){
-            searchTweets();
+            exit();
             return;
         }
         if(view == box3){
@@ -176,7 +199,7 @@ public class MapActivity extends FragmentActivity implements View.OnClickListene
     }
 
     private void searchVenue(){
-        new VenueService(this).execute("near",contextManager.getValue("latitude"),contextManager.getValue("longitude"));
+        new VenueService(this).execute("near",contextManager.getString("latitude"),contextManager.getString("longitude"));
         hideMenu();
         showMapControllers();
 
@@ -228,8 +251,8 @@ public class MapActivity extends FragmentActivity implements View.OnClickListene
 
 
     private void searchTweets(){
-        String latitude     =   contextManager.getValue("latitude");
-        String longitude    =   contextManager.getValue("longitude");
+        String latitude     =   contextManager.getString("latitude");
+        String longitude    =   contextManager.getString("longitude");
         String radius       =   "10km";
 
         TwitterService ts = new TwitterService(this);
@@ -238,12 +261,15 @@ public class MapActivity extends FragmentActivity implements View.OnClickListene
     }
 
     private void updateWeather(){
-        new GeoCoderService(this).execute(contextManager.getValue("latitude"),contextManager.getValue("longitude"));
-        new WeatherService(this).execute(contextManager.getValue("latitude"),contextManager.getValue("longitude"));
+        new GeoCoderService(this).execute(contextManager.getString("latitude"),contextManager.getString("longitude"));
+        new WeatherService(this).execute(contextManager.getString("latitude"),contextManager.getString("longitude"));
     }
 
     private void hideMenu(){
         Log.i(TAG,"hideMenu");
+
+        this.contentView.setBackgroundResource(0);
+
 
         this.box1.setVisibility(View.GONE);
         this.box2.setVisibility(View.GONE);
@@ -255,10 +281,54 @@ public class MapActivity extends FragmentActivity implements View.OnClickListene
         this.down.setVisibility(View.GONE);
 
 
+
+    }
+
+    private void exit(){
+        Log.i(TAG,"exit");
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(MapActivity.this);
+
+        builder.setTitle("Sair");
+        builder.setMessage("Você deseja sair?");
+
+
+        final MapActivity mf = this;
+
+        builder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+
+            public void onClick(DialogInterface arg0, int arg1) {
+                try{
+                    contextManager.clean();
+//                    Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+//                    startActivity(intent);
+                    finish();
+
+                }
+                catch (Exception e){
+                    Log.e(TAG,"Dialog yes",e);
+                }
+            }
+        });
+
+
+        builder.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface arg0, int arg1) {
+            }
+        });
+
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 
     private void showMenu(){
         Log.i(TAG,"showMenu");
+
+        this.contentView.setBackgroundResource(R.color.common_signin_btn_dark_text_disabled);
+        Drawable background = this.contentView.getBackground();
+        background.setAlpha(30);
+
+
 
         this.box1.setVisibility(View.VISIBLE);
         this.box2.setVisibility(View.VISIBLE);

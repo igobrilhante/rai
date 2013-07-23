@@ -38,14 +38,10 @@ public class WeatherService  extends AbstractService<Map<String,String>> {
     private static final String TAG = "WeatherService";
     private String API = "811d5f0068823a1f95b9e6412ed32d56";
     private String BASIC_URL = "https://api.forecast.io/forecast/"+API+"/";
-    private Context context;
-    private ContextManager contextManager;
     private Activity requester;
 
     public WeatherService(Activity requester){
         super();
-        this.contextManager = ContextManager.instance();
-        this.context = this.contextManager.getContext();
         this.requester = requester;
     }
 
@@ -84,7 +80,7 @@ public class WeatherService  extends AbstractService<Map<String,String>> {
             Map<String,String> data = new HashMap<String, String>();
             JSONObject currently    = jsonObject.getJSONObject("currently");
             String summary          = currently.getString("summary");
-            String temperature      = currently.getString("temperature");
+            String temperature      = Integer.toString((int)(Double.parseDouble(currently.getString("temperature"))));
             String humidity         = currently.getString("humidity");
             SimpleDateFormat formato = new SimpleDateFormat("dd-MM HH:mm");
             String date = formato.format(new Date());

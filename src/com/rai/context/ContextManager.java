@@ -1,6 +1,9 @@
 package com.rai.context;
 
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.location.Criteria;
+import android.os.Looper;
 import android.util.Log;
 import android.widget.TextView;
 import com.rai.sensor.LocationSensor;
@@ -25,29 +28,40 @@ public class ContextManager {
     private static final String TAG = "ContextManager";
 
 	private static ContextManager instance;
-    private ServiceController serviceController;
     private LocationSensor locationSensor;
     private Context context;
-    private Map<String,String> space;
+    private SharedPreferences   preferences;
 //    private Map<String,TextView> textViewMap;
 	
 	private ContextManager(){
-        this.serviceController = ServiceController.instance();
-        this.space             = new Hashtable<String, String>();
+
     }
+
 
 	public static ContextManager instance(){
         Log.i(TAG,"instance");
 		
 		if(instance == null){
+            Log.d(TAG,"new contextmanager");
 			instance = new ContextManager();
+
 		}
 		
 		return instance;
 	}
 
+    public void requestUpdateLocation() {
+
+        this.locationSensor.getLocationManager().requestLocationUpdates(this.locationSensor.getLocationProvider(), 0, 0, this.locationSensor);
+    }
+    public void removeUpdateLocation(){
+        this.locationSensor.getLocationManager().removeUpdates(this.locationSensor);
+    }
+
     public void setContext(Context context){
+        Log.d(TAG,"setContext");
         this.context = context;
+        this.preferences = this.context.getSharedPreferences("RAI",Context.MODE_PRIVATE);
         this.locationSensor = new LocationSensor();
     }
 
@@ -55,29 +69,19 @@ public class ContextManager {
         return this.context;
     }
 
-//    public void putTextView(String key, TextView textView){
-//        if(this.textViewMap == null){
-//            this.textViewMap = new Hashtable<String, TextView>();
-//        }
-//        this.textViewMap.put(key,textView);
-//    }
-//
-//    public TextView getTextView(String key){
-//        return this.textViewMap.remove(key);
-//    }
-//
-//    public void cleanTextView(){
-//        this.textViewMap = null;
-//    }
-	
-	public void putEntry(String key,String value){
-		this.space.put(key, value);
-	}
-
-    public String getValue(String key){
-        return this.space.get(key);
+    public SharedPreferences getPreferences() {
+        return preferences;
     }
 
-	
-	
+    public void setPreferences(SharedPreferences preferences) {
+        this.preferences = preferences;
+    }
+
+    public String getString(String key){
+        return this.preferences.getString(key,"");
+    }
+
+    public void clean(){
+        this.preferences.edit().clear().commit();
+    }
 }
