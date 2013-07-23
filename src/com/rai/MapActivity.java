@@ -326,7 +326,7 @@ public class MapActivity extends FragmentActivity implements View.OnClickListene
     private void showMenu(){
         Log.i(TAG,"showMenu");
 
-        this.contentView.setBackgroundResource(R.color.common_signin_btn_dark_text_disabled);
+//        this.contentView.setBackgroundResource(R.color.common_signin_btn_dark_text_disabled);
         Drawable background = this.contentView.getBackground();
         background.setAlpha(30);
 
