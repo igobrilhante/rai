@@ -119,14 +119,24 @@ public class WeatherService  extends AbstractService<Map<String,String>> {
 
         ImageView weatherView   =  (ImageView)this.requester.findViewById(R.id.weatherView);
 
-        if(summary.equalsIgnoreCase("Breezy and Mostly Cloudy")){
-            weatherView.setImageResource(R.drawable.status_weather_clear_96);
-            ContextManager.instance().getPreferences().edit().putString("weather","sunny");
+        Log.d(TAG,"Summary: "+summary);
+        Date d = new Date();
+        Log.d(TAG,"Date "+d.getHours());
+        if(d.getHours()>=18 || d.getHours() <= 5){
+            weatherView.setImageResource(R.drawable.moon);
+            ContextManager.instance().getPreferences().edit().putString("weather","clear");
         }
         else{
-            weatherView.setImageResource(R.drawable.status_weather_rain);
-            ContextManager.instance().getPreferences().edit().putString("weather","rainy");
+            if(summary.equalsIgnoreCase("Breezy and Mostly Cloudy") || summary.equalsIgnoreCase("Mostly Cloudy") ){
+                weatherView.setImageResource(R.drawable.status_weather_clear_96);
+                ContextManager.instance().getPreferences().edit().putString("weather","clear");
+            }
+            else{
+                weatherView.setImageResource(R.drawable.sun_littlecloud_rain);
+                ContextManager.instance().getPreferences().edit().putString("weather","rainy");
+            }
         }
+
 
 
         Log.i(TAG, "RESULT ");
