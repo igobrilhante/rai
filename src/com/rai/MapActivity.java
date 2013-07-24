@@ -3,30 +3,23 @@ package com.rai;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
-import android.net.Uri;
-import android.os.AsyncTask;
-import android.os.Bundle;
-import android.os.Parcel;
-import android.app.Activity;
 import android.graphics.Color;
+import android.net.Uri;
+import android.os.Bundle;
 
 import android.support.v4.app.FragmentActivity;
 import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.MotionEvent;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.*;
 
 import android.view.Menu;
-import com.rai.context.ContextApp;
 import com.rai.context.ContextManager;
 import com.rai.services.GeoCoderService;
 import com.rai.services.TwitterService;
@@ -44,8 +37,8 @@ public class MapActivity extends FragmentActivity implements View.OnClickListene
     private View    box2;
     private View    box3;
     private View    box4;
-    private View    searchTweetsView;
-    private View    contentView;
+    private View    exitView;
+    private View    logoutView;
 
     private int screenWidth  = 0;
     private int screenHeight = 0;
@@ -76,9 +69,8 @@ public class MapActivity extends FragmentActivity implements View.OnClickListene
         this.box3.setOnClickListener(this);
         this.box4 = findViewById(R.id.box4);
         this.box4.setOnClickListener(this);
-        this.searchTweetsView = findViewById(R.id.searchTweet);
-
-        this.contentView = findViewById(R.id.content);
+        this.exitView = findViewById(R.id.exit);
+        this.logoutView = findViewById(R.id.logout);
 
         this.up = findViewById(R.id.up);
         this.up.setVisibility(View.GONE);
@@ -90,7 +82,10 @@ public class MapActivity extends FragmentActivity implements View.OnClickListene
 //        this.up.setOnHoverListener(this);
         this.down.setOnClickListener(this);
 //        this.down.setOnHoverListener(this);
-        this.searchTweetsView.setOnClickListener(this);
+        this.exitView.setOnClickListener(this);
+        this.logoutView.setOnClickListener(this);
+
+
 		
 		this.googleMaps = ((SupportMapFragment)getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
         LatLng point = new LatLng(Double.parseDouble(this.contextManager.getString("latitude")),
@@ -136,7 +131,8 @@ public class MapActivity extends FragmentActivity implements View.OnClickListene
 
         updateWeather();
 
-        hideMapControllers();
+//        hideMapControllers();
+        showMapControllers();
 
         showMenu();
 	}
@@ -172,20 +168,24 @@ public class MapActivity extends FragmentActivity implements View.OnClickListene
 
         if(view == up){
             showMenu();
-            hideMapControllers();
+//            hideMapControllers();
             return;
         }
         if(view == down){
             hideMenu();
-            showMapControllers();
+//            showMapControllers();
             return;
         }
         if(view == box1){
             updateWeather();
             return;
         }
-        if(view == searchTweetsView){
+        if(view == exitView){
             exit();
+            return;
+        }
+        if(view == logoutView){
+            logout();
             return;
         }
         if(view == box3){
@@ -199,9 +199,7 @@ public class MapActivity extends FragmentActivity implements View.OnClickListene
     }
 
     private void searchVenue(){
-//        new VenueService(this).execute("near",contextManager.getString("latitude"),contextManager.getString("longitude"));
-//        hideMenu();
-//        showMapControllers();
+
         Intent intent = new Intent(getApplicationContext(),RecommendationActivity.class);
         startActivity(intent);
 
@@ -229,7 +227,7 @@ public class MapActivity extends FragmentActivity implements View.OnClickListene
                     String tag = input.getText().toString();
                     new VenueService(mf).execute("tag",tag);
                     hideMenu();
-                    showMapControllers();
+//                    showMapControllers();
 
                 }
                 catch (Exception e){
@@ -268,25 +266,34 @@ public class MapActivity extends FragmentActivity implements View.OnClickListene
     }
 
     private void hideMenu(){
-        Log.i(TAG,"hideMenu");
-
-        this.contentView.setBackgroundResource(0);
-
+        Log.i(TAG, "hideMenu");
 
         this.box1.setVisibility(View.GONE);
         this.box2.setVisibility(View.GONE);
         this.box3.setVisibility(View.GONE);
         this.box4.setVisibility(View.GONE);
-        this.searchTweetsView.setVisibility(View.GONE);
+        this.exitView.setVisibility(View.GONE);
+        this.logoutView.setVisibility(View.GONE);
 
         this.up.setVisibility(View.VISIBLE);
         this.down.setVisibility(View.GONE);
+
+        findViewById(R.id.content).setBackgroundColor(Color.argb(0,255,255,255));
 
 
 
     }
 
-    private void exit(){
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            exit();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    private void logout(){
         Log.i(TAG,"exit");
 
         AlertDialog.Builder builder = new AlertDialog.Builder(MapActivity.this);
@@ -302,8 +309,40 @@ public class MapActivity extends FragmentActivity implements View.OnClickListene
             public void onClick(DialogInterface arg0, int arg1) {
                 try{
                     contextManager.clean();
-//                    Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-//                    startActivity(intent);
+                    finish();
+
+                }
+                catch (Exception e){
+                    Log.e(TAG,"Dialog yes",e);
+                }
+            }
+        });
+
+
+        builder.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface arg0, int arg1) {
+            }
+        });
+
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
+
+    private void exit(){
+        Log.i(TAG,"exit");
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(MapActivity.this);
+
+        builder.setTitle("Fechar");
+        builder.setMessage("Você deseja fechar a aplicação?");
+
+
+        final MapActivity mf = this;
+
+        builder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+
+            public void onClick(DialogInterface arg0, int arg1) {
+                try{
                     finish();
 
                 }
@@ -326,20 +365,17 @@ public class MapActivity extends FragmentActivity implements View.OnClickListene
     private void showMenu(){
         Log.i(TAG,"showMenu");
 
-//        this.contentView.setBackgroundResource(R.color.common_signin_btn_dark_text_disabled);
-        Drawable background = this.contentView.getBackground();
-        background.setAlpha(30);
-
-
-
         this.box1.setVisibility(View.VISIBLE);
         this.box2.setVisibility(View.VISIBLE);
         this.box3.setVisibility(View.VISIBLE);
         this.box4.setVisibility(View.VISIBLE);
-        this.searchTweetsView.setVisibility(View.VISIBLE);
+        this.exitView.setVisibility(View.VISIBLE);
+        this.logoutView.setVisibility(View.VISIBLE);
 
         this.up.setVisibility(View.GONE);
         this.down.setVisibility(View.VISIBLE);
+
+        findViewById(R.id.content).setBackgroundColor(Color.argb(135,255,255,255));
 
     }
 
@@ -365,10 +401,10 @@ public class MapActivity extends FragmentActivity implements View.OnClickListene
     }
 
     private void hideMapControllers(){
-        googleMaps.getUiSettings().setAllGesturesEnabled(false);
-        googleMaps.setMyLocationEnabled(false);
-        googleMaps.getUiSettings().setZoomControlsEnabled(false);
-        googleMaps.getUiSettings().setZoomGesturesEnabled(false);
+//        googleMaps.getUiSettings().setAllGesturesEnabled(false);
+//        googleMaps.setMyLocationEnabled(false);
+//        googleMaps.getUiSettings().setZoomControlsEnabled(false);
+//        googleMaps.getUiSettings().setZoomGesturesEnabled(false);
     }
 
 

@@ -39,6 +39,8 @@
         
         <activity
             android:name="com.rai.MainActivity"
+            android:noHistory="true"
+            android:launchMode="singleTask"
             android:label="@string/app_name" >
             <intent-filter>
                 <action   android:name="android.intent.action.MAIN" />
@@ -48,10 +50,11 @@
         </activity>
         <activity
             android:name="com.rai.MapActivity"
+            android:launchMode="singleTask"
             android:label="@string/title_activity_map" >
 
         </activity>
-        <activity android:name=".WebActivity"/>
+        <activity android:name=".WebActivity" android:noHistory="true"/>
         <activity android:name=".RecommendationActivity"/>
 
         <!-- Meta Data  -->

@@ -29,7 +29,9 @@ public class MainActivity extends Activity {
             Log.i(TAG,"No user");
             Intent webActivity = new Intent(getApplicationContext(),WebActivity.class);
             startActivity(webActivity);
+
         }
+        finish();
 
     }
 

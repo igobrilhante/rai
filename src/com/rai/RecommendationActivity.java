@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
@@ -48,6 +49,7 @@ public class RecommendationActivity extends FragmentActivity implements View.OnC
     private ArrayList<Recommendation> list;
     private List<MarkerOptions> markers;
     private ListView listView;
+    private Map<Integer,List<View>> views;
     private GoogleMap googleMaps;
     private View    up;
     private View    down;
@@ -59,6 +61,7 @@ public class RecommendationActivity extends FragmentActivity implements View.OnC
 
         this.contextManager = ContextManager.instance();
         this.listView = (ListView)findViewById(R.id.list_view);
+
 
         String latitude     = this.contextManager.getString("latitude");
         String longitude    = this.contextManager.getString("longitude");
@@ -165,10 +168,11 @@ public class RecommendationActivity extends FragmentActivity implements View.OnC
         private View.OnClickListener onClickListener;
         public RecommendationAdapter(List<Recommendation> list){
             super(RecommendationActivity.this,R.layout.list_recommendation,list);
+            views = new HashMap<Integer, List<View>>();
         }
 
         public View getView(int position, View convertView, ViewGroup parent) {
-
+            views.put(position,new ArrayList<View>());
             ViewHolder holder = null;
             if (convertView == null) {
                 convertView = getLayoutInflater().inflate(
@@ -181,8 +185,8 @@ public class RecommendationActivity extends FragmentActivity implements View.OnC
                 holder.layout = (RelativeLayout) convertView
                         .findViewById(R.id.row_layout);
 
-//                holder.txtPlaceRating = (TextView) convertView
-//                        .findViewById(R.id.row_rating);
+                holder.txtPlaceRating = (TextView) convertView
+                        .findViewById(R.id.row_rating);
 
                 holder.txtPlaceDistance = (TextView)convertView.findViewById(R.id.row_placedistance);
                 convertView.setTag(holder);
@@ -202,6 +206,12 @@ public class RecommendationActivity extends FragmentActivity implements View.OnC
                 holder.heart5 = (ImageView) convertView.findViewById(R.id.heart5);
                 holder.heart5.setOnClickListener(new ImageViewClickListener(position));
 
+                views.get(position).add(holder.heart1);
+                views.get(position).add(holder.heart2);
+                views.get(position).add(holder.heart3);
+                views.get(position).add(holder.heart4);
+                views.get(position).add(holder.heart5);
+
             } else {
                 holder = (ViewHolder) convertView.getTag();
             }
@@ -211,6 +221,7 @@ public class RecommendationActivity extends FragmentActivity implements View.OnC
             try {
                 holder.txtPlaceName.setText(rec.getVenue().getName());
                 double distance = rec.getVenue().getDistance();
+                holder.txtPlaceRating.setText(Double.toString(rec.getVenue().getRating()));
                 holder.txtPlaceDistance.setText(distance+" metros ");
                 if (rec.getVenue().getAddress() != null
                         && rec.getVenue().getAddress().length() > 0) {
@@ -249,8 +260,9 @@ public class RecommendationActivity extends FragmentActivity implements View.OnC
 
         private final FragmentActivity activity;
         private final String TAG = "RecommendationService";
-        private static final String VENUE_URL     = "http://rai-server.herokuapp.com/poi/buscar/";
-        private static final String VENUE_TAG_URL = "http://rai-server.herokuapp.com/poi/buscar-por-tag/";
+        protected static final String VENUE_URL     = "http://rai-server.herokuapp.com/poi/buscar/";
+        protected static final String VENUE_TAG_URL = "http://rai-server.herokuapp.com/poi/buscar-por-tag/";
+        protected static final String REC_EVAL_URL  = "http://rai-server.herokuapp.com/rec/";
 
         public RecommendationService(FragmentActivity activity) {
             this.activity = activity;
@@ -343,7 +355,8 @@ public class RecommendationActivity extends FragmentActivity implements View.OnC
 
                         String id        = venueJSON.getString("id");
                         String nome      = venueJSON.getString("nome");
-//                    String distance  = venueJSON.getString("distance");
+                        String distance  = venueJSON.getString("distance");
+                        String address   = venueJSON.getString("address");
                         Double latitude  = venueJSON.getDouble("latitude");
                         Double longitude = venueJSON.getDouble("longitude");
                         Double rating    = venueJSON.getDouble("avaliacao");
@@ -351,10 +364,11 @@ public class RecommendationActivity extends FragmentActivity implements View.OnC
                         Venue venue = new Venue();
                         venue.setName(nome);
                         venue.setId(id);
-                        venue.setDistance(1.0);
-                        venue.setAddress("Endereço");
+                        venue.setDistance(Double.parseDouble(distance));
+                        venue.setAddress(address);
                         venue.setLatitude(latitude);
                         venue.setLongitude(longitude);
+                        venue.setRating(rating);
 
                         Recommendation rec = new Recommendation();
                         rec.setRating(2.0);
@@ -397,35 +411,124 @@ public class RecommendationActivity extends FragmentActivity implements View.OnC
 
         public void onClick(View v) {
             Recommendation rec = list.get(position);
-//            Set<ImageView> views = new HashSet<ImageView>();
+            String venueId = rec.getVenue().getId();
 
-            ImageView imageView = (ImageView)v;
             switch (v.getId()){
                 case R.id.heart1:
-                    imageView.setBackgroundColor(Color.rgb(255,18,0));
-                    Toast.makeText(getApplicationContext(), "1 estrela para "+rec.getVenue().getName(), Toast.LENGTH_SHORT).show();
-//                    views.add(imageView);
+                    paintRed(views.get(position),1,venueId);
                     break;
 
                 case R.id.heart2:
-//                    ImageView imageView = (ImageView)v;
-                    Toast.makeText(getApplicationContext(), "2 estrelas para "+rec.getVenue().getName(), Toast.LENGTH_SHORT).show();
+                    paintRed(views.get(position),2,venueId);
 
                     break;
 
                 case R.id.heart3:
-                    Toast.makeText(getApplicationContext(), "3 estrelas para "+rec.getVenue().getName(), Toast.LENGTH_SHORT).show();
+                    paintRed(views.get(position),3,venueId);
                     break;
 
                 case R.id.heart4:
-                    Toast.makeText(getApplicationContext(), "4 estrelas para "+rec.getVenue().getName(), Toast.LENGTH_SHORT).show();
+                    paintRed(views.get(position),4,venueId);
                     break;
 
                 case R.id.heart5:
-                    Toast.makeText(getApplicationContext(), "5 estrelas para "+rec.getVenue().getName(), Toast.LENGTH_SHORT).show();
+                    paintRed(views.get(position),5,venueId);
                     break;
             }
         }
+
+        private void paintRed(List<View> viewList,int max,String venueId){
+
+            clean(viewList);
+            for(int i = 0;i<max;i++){
+                viewList.get(i).setBackgroundColor(Color.rgb(255,18,0));
+            }
+            Date date = new Date();
+            new SendEvaluation().execute(venueId,contextManager.getString("user"),Integer.toString(max),Long.toString(date.getTime()));
+        }
+
+        private void clean(List<View> views){
+            for(View view : views){
+                view.setBackgroundColor(0);
+            }
+        }
     }
+
+    class SendEvaluation extends AbstractService<List<JSONObject>> {
+
+        private static final String TAG = "SendEvaluation";
+
+        @Override
+        protected String getName() {
+            return null;  //To change body of implemented methods use File | Settings | File Templates.
+        }
+
+        @Override
+        protected Class<? extends AbstractService> getClassName() {
+            return null;  //To change body of implemented methods use File | Settings | File Templates.
+        }
+
+        @Override
+        protected List<JSONObject> doInBackground(String... strings) {
+            String url = "";
+
+            url = RecommendationService.REC_EVAL_URL+""+strings[0]+"/"+strings[1]+"/"+strings[2]+"/"+strings[3];
+            Log.d(TAG,url);
+
+
+            Log.i(TAG, "URL " + url);
+            HttpGet request = new HttpGet(url);
+
+            HttpClient httpClient = new DefaultHttpClient();
+            HttpResponse response = null;
+            JSONObject jsonObject = null;
+
+
+            try{
+                response = httpClient.execute(request);
+            }
+            catch (Exception e){
+                Log.e(TAG,"Internet Problem",e);
+            }
+            try{
+                jsonObject = new JSONObject(IOUtils.toString(response.getEntity().getContent()));
+                List<JSONObject> data = new ArrayList<JSONObject>();
+                data.add(jsonObject);
+
+
+                return data;
+
+            }
+            catch (Exception e){
+                Log.e(TAG,"Json Problem",e);
+            }
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(List<JSONObject> result) {
+
+            if(result!=null){
+
+                int code        = 0;
+                try {
+                    code = result.get(0).getJSONObject("meta").getInt("code");
+                    if(code == 202){
+
+                        Toast.makeText(getApplicationContext(),"Obrigado pelo seu feedback!",Toast.LENGTH_SHORT).show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                }
+                Log.d(TAG,"code "+code);
+
+
+            }
+
+        }
+    }
+
+
 
 }

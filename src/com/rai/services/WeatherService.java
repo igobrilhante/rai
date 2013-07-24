@@ -4,10 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.util.Log;
 import android.view.ViewStub;
-import android.widget.LinearLayout;
-import android.widget.ProgressBar;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.*;
 import com.rai.R;
 import com.rai.context.ContextApp;
 import com.rai.context.ContextManager;
@@ -50,8 +47,7 @@ public class WeatherService  extends AbstractService<Map<String,String>> {
         ProgressBar bar = (ProgressBar)this.requester.findViewById(R.id.progressBarWeather);
         bar.setVisibility(ViewStub.VISIBLE);
 
-        LinearLayout linearLayout = (LinearLayout)this.requester.findViewById(R.id.box1);
-        linearLayout.setClickable(false);
+        this.requester.findViewById(R.id.box1).setClickable(false);
     }
 
     @Override
@@ -113,6 +109,7 @@ public class WeatherService  extends AbstractService<Map<String,String>> {
         String date        = result.get("date");
         String temperature = result.get("temperature");
         String humidity    = result.get("humidity");
+        String summary     = result.get("summary");
 
         TextView dateView        = (TextView)this.requester.findViewById(R.id.textViewDate);
         dateView.setText(date);
@@ -120,8 +117,17 @@ public class WeatherService  extends AbstractService<Map<String,String>> {
         TextView temperatureView = (TextView)this.requester.findViewById(R.id.textViewDegree);
         temperatureView.setText(Utils.formatTemperature(temperature));
 
-//        TextView humidityView    = (TextView)this.requester.findViewById(R.id.textViewHumidity);
-//        humidityView.setText(humidity);
+        ImageView weatherView   =  (ImageView)this.requester.findViewById(R.id.weatherView);
+
+        if(summary.equalsIgnoreCase("Breezy and Mostly Cloudy")){
+            weatherView.setImageResource(R.drawable.status_weather_clear_96);
+            ContextManager.instance().getPreferences().edit().putString("weather","sunny");
+        }
+        else{
+            weatherView.setImageResource(R.drawable.status_weather_rain);
+            ContextManager.instance().getPreferences().edit().putString("weather","rainy");
+        }
+
 
         Log.i(TAG, "RESULT ");
         }
@@ -129,8 +135,7 @@ public class WeatherService  extends AbstractService<Map<String,String>> {
             Toast.makeText(this.requester.getApplicationContext(),"Não foi possível atualizar o clima",Toast.LENGTH_SHORT).show();
         }
 
-        LinearLayout linearLayout = (LinearLayout)this.requester.findViewById(R.id.box1);
-        linearLayout.setClickable(true);
+        this.requester.findViewById(R.id.box1).setClickable(true);
     }
 
     @Override

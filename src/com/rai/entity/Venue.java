@@ -14,6 +14,7 @@ public class Venue {
     private String address;
     private double latitude;
     private double longitude;
+    private double rating;
 
     public double getDistance() {
         return distance;
@@ -25,6 +26,14 @@ public class Venue {
 
     public String getId() {
         return id;
+    }
+
+    public double getRating() {
+        return rating;
+    }
+
+    public void setRating(double rating) {
+        this.rating = rating;
     }
 
     public void setId(String id) {

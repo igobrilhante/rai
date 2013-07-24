@@ -44,18 +44,27 @@ public class WebActivity extends Activity {
             public void onPageStarted(WebView view, String url, Bitmap favicon) {
 
 
-                String fragment = "#access_token=";
-                int start = url.indexOf(fragment);
-                if (start > -1) {
+                String userFrag = "#user=";
+                String tokenFrag = "#token=";
 
-                    String accessToken = url.substring(start + fragment.length(), url.length());
+                int startUser  = url.indexOf(userFrag);
+                int startToken = url.indexOf(tokenFrag);
 
-                    contextManager.getPreferences().edit().putString("user",accessToken).commit();
+                if (startUser > -1) {
+
+
+
+                    String user = url.substring(startUser+userFrag.length(),startToken);
+                    String token = url.substring(startToken+tokenFrag.length(),url.length());
+
+
+                    contextManager.getPreferences().edit().putString("user",user).commit();
+                    contextManager.getPreferences().edit().putString("token",token).commit();
 
 //                    Log.v(TAG, "OAuth complete, token: [" + accessToken + "].");
 //                    sharedPrefs.edit().putString("user.foursquare.token", accessToken).commit();
 
-                    Toast.makeText(WebActivity.this, "Token: " + accessToken, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(WebActivity.this, "Token: " + token, Toast.LENGTH_SHORT).show();
 //                    Toast.makeText(ActivityWebView.this, getResources().getText(R.string.suc_login).toString(), Toast.LENGTH_SHORT).show();
 //                    Utilities.toastMensage(ActivityWebView.this, getResources().getText(R.string.suc_login).toString()).show();
                     Intent intent = new Intent(getApplicationContext(),MapActivity.class);

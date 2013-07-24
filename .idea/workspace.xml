@@ -14,7 +14,7 @@
   <component name="AndroidDesignerProfile">
     <option name="fullProfile">
       <profile>
-        <option name="device" value="2.7in QVGA" />
+        <option name="device" value="4.7in WXGA" />
         <option name="deviceConfiguration" value="Portrait" />
         <option name="dockMode" value="" />
         <option name="localeLanguage" value="en" />
@@ -36,9 +36,12 @@
         <option name="visible" value="false" />
       </GlobalState>
     </option>
+    <device-configurations>
+      <entry key="file://$PROJECT_DIR$/res/layout-land/activity_map.xml" value="Portrait" />
+    </device-configurations>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="RecommendationAd" />
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="Recommen" />
   </component>
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" name="Default" comment="" />
@@ -48,12 +51,12 @@
     <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372017070172" ignored="false" />
     <file path="$PROJECT_DIR$/.idea/modules.xml" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1371924194485" ignored="false" />
     <file path="$PROJECT_DIR$/.idea/vcs.xml" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1371924194485" ignored="false" />
-    <file path="/activity_map.xml" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374537471901" ignored="false" />
+    <file path="/activity_map.xml" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374636448236" ignored="false" />
     <file path="/fragment.java" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374552909871" ignored="false" />
-    <file path="/MapActivity.java" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374588588845" ignored="false" />
-    <file path="/Dummy.txt" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374583754004" ignored="false" />
+    <file path="/MapActivity.java" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374636530450" ignored="false" />
+    <file path="/Dummy.txt" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374639215415" ignored="false" />
     <file path="/activity_map2.xml" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1371941468461" ignored="false" />
-    <file path="/WeatherService.java" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374550070405" ignored="false" />
+    <file path="/WeatherService.java" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374634355323" ignored="false" />
     <file path="/Weather.java" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372308016326" ignored="false" />
     <file path="/IService.java" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372033627146" ignored="false" />
     <file path="/ServiceController.java" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372045373850" ignored="false" />
@@ -67,12 +70,12 @@
     <file path="/TwitterTest.java" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372348592257" ignored="false" />
     <file path="$PROJECT_DIR$/libs/google-play-services_lib/project.properties" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372719855355" ignored="false" />
     <file path="/GeoCoderService.java" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372726718514" ignored="false" />
-    <file path="$PROJECT_DIR$/../rai-server/app/model/Recommendation.scala" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372727395327" ignored="false" />
-    <file path="/Recommendation.scala" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372727384310" ignored="false" />
-    <file path="$PROJECT_DIR$/../rai-server/app/model/Venue.scala" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372740167834" ignored="false" />
-    <file path="/Venue.scala" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372740118106" ignored="false" />
-    <file path="$PROJECT_DIR$/../rai-server/conf/routes" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374554724001" ignored="false" />
-    <file path="/routes" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374554711753" ignored="false" />
+    <file path="$PROJECT_DIR$/../rai-server/app/model/Recommendation.scala" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374643019018" ignored="false" />
+    <file path="/Recommendation.scala" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374643016400" ignored="false" />
+    <file path="$PROJECT_DIR$/../rai-server/app/model/Venue.scala" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374644711706" ignored="false" />
+    <file path="/Venue.scala" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374644704914" ignored="false" />
+    <file path="$PROJECT_DIR$/../rai-server/conf/routes" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374643053398" ignored="false" />
+    <file path="/routes" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374643052937" ignored="false" />
     <file path="$PROJECT_DIR$/../rai-server/app/controllers/VenueController.scala" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372739079659" ignored="false" />
     <file path="/VenueController.scala" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372739079659" ignored="false" />
     <file path="/VenueService.java" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1372742057123" ignored="false" />
@@ -82,14 +85,14 @@
     <file path="/default.xml" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374537672228" ignored="false" />
     <file path="$PROJECT_DIR$/res/values-sw600dp/colors.xml" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374547825383" ignored="false" />
     <file path="/colors.xml" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374547862012" ignored="false" />
-    <file path="/MainActivity.java" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374588754043" ignored="false" />
+    <file path="/MainActivity.java" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374628732148" ignored="false" />
     <file path="$PROJECT_DIR$/gen/com/rai/BuildConfig.java" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374552976856" ignored="false" />
     <file path="$PROJECT_DIR$/gen/com/rai/Manifest.java" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374552964229" ignored="false" />
     <file path="$PROJECT_DIR$/gen/com/rai/R.java" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374552964229" ignored="false" />
-    <file path="/WebActivity.java" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374567991152" ignored="false" />
-    <file path="$PROJECT_DIR$/../rai-server/app/controllers/Application.scala" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374568789916" ignored="false" />
-    <file path="/Application.scala" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374567168845" ignored="false" />
-    <file path="$PROJECT_DIR$/../rai-server/app/model/User.scala" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374565215006" ignored="false" />
+    <file path="/WebActivity.java" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374639346441" ignored="false" />
+    <file path="$PROJECT_DIR$/../rai-server/app/controllers/Application.scala" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374639276899" ignored="false" />
+    <file path="/Application.scala" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374639275782" ignored="false" />
+    <file path="$PROJECT_DIR$/../rai-server/app/model/User.scala" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374641168353" ignored="false" />
     <file path="/User.scala" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374565214694" ignored="false" />
     <file path="$PROJECT_DIR$/../rai-server/app/views/cadastro.scala.html" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374565332791" ignored="false" />
     <file path="/cadastro.scala.html" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374565176563" ignored="false" />
@@ -109,11 +112,14 @@
     <file path="/main.scala.html" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374560616496" ignored="false" />
     <file path="/list_recommendation.xml" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374589345152" ignored="false" />
     <file path="/activity_recommendation.xml" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374594030802" ignored="false" />
-    <file path="/RecommendationActivity.java" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374595161687" ignored="false" />
+    <file path="/RecommendationActivity.java" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374644996554" ignored="false" />
     <file path="/Recommendation.java" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374586842652" ignored="false" />
-    <file path="/Venue.java" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374594549525" ignored="false" />
+    <file path="/Venue.java" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374644954164" ignored="false" />
     <file path="/RecommendationService.java" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374587868401" ignored="false" />
     <file path="/RecommendationAdapter.java" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374588064433" ignored="false" />
+    <file path="/AndroidManifest.xml" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374629136464" ignored="false" />
+    <file path="$PROJECT_DIR$/../rai-server/app/controllers/RecommendationController.scala" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374643039835" ignored="false" />
+    <file path="/RecommendationController.scala" changelist="23d8c4a5-0d28-4380-98cc-c55e3f00ca49" time="1374643038530" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,83 +179,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ContextManager.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/rai/context/ContextManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="84" column="49" selection-start="2155" selection-end="2155" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VenueService.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/rai/services/VenueService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="143" column="0" selection-start="4611" selection-end="4859" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MapActivity.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/rai/MapActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="329" column="95" selection-start="10120" selection-end="10120" vertical-scroll-proportion="0.3587922">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="activity_map.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/activity_map.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="168" column="101" selection-start="11628" selection-end="11628" vertical-scroll-proportion="-5.4528303">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/rai/MainActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="79" selection-start="742" selection-end="742" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="list_recommendation.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/list_recommendation.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="80" column="56" selection-start="3750" selection-end="3750" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RecommendationActivity.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="RecommendationActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/rai/RecommendationActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="93" column="100" selection-start="3371" selection-end="3371" vertical-scroll-proportion="0.0">
+            <state line="267" column="37" selection-start="10504" selection-end="10504" vertical-scroll-proportion="0.5242967">
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#11313#11325#0" expanded="true" />
+                <element signature="e#2668#3270#0" expanded="true" />
+                <element signature="e#3250#3251#0" expanded="true" />
+                <element signature="e#3765#5383#0" expanded="true" />
+                <element signature="e#4312#4955#0" expanded="true" />
+                <element signature="e#4936#4937#0" expanded="true" />
+                <element signature="e#5372#5373#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Venue.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/rai/entity/Venue.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="33" selection-start="953" selection-end="953" vertical-scroll-proportion="0.0">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -257,19 +198,25 @@
       <file leaf-file-name="Recommendation.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/rai/entity/Recommendation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="15" selection-start="256" selection-end="256" vertical-scroll-proportion="0.0">
+            <state line="11" column="16" selection-start="257" selection-end="257" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_recommendation.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/activity_recommendation.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
+      <file leaf-file-name="Venue.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/rai/entity/Venue.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="44" selection-start="864" selection-end="864" vertical-scroll-proportion="0.0">
+            <state line="30" column="31" selection-start="636" selection-end="636" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WebActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/rai/WebActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="56" column="86" selection-start="1649" selection-end="1649" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -285,29 +232,30 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/rai/sensor/LocationSensor.java" />
-        <option value="$PROJECT_DIR$/res/values/colors.xml" />
-        <option value="$PROJECT_DIR$/res/layout/activity_map.xml" />
-        <option value="$PROJECT_DIR$/res/layout/activity_web.xml" />
-        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/src/com/rai/context/ContextManager.java" />
-        <option value="$PROJECT_DIR$/src/com/rai/WebActivity.java" />
         <option value="$PROJECT_DIR$/src/com/rai/entity/Recommendation.java" />
         <option value="$PROJECT_DIR$/src/com/rai/adapter/RecommendationAdapter.java" />
         <option value="$PROJECT_DIR$/src/com/rai/services/RecommendationService.java" />
-        <option value="$PROJECT_DIR$/src/com/rai/MainActivity.java" />
-        <option value="$PROJECT_DIR$/res/layout/list_recommendation.xml" />
         <option value="$PROJECT_DIR$/res/layout/activity_recommendation.xml" />
+        <option value="$PROJECT_DIR$/src/com/rai/MainActivity.java" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/res/layout/activity_map_land.xml" />
+        <option value="$PROJECT_DIR$/res/layout-port/activity_map.xml" />
+        <option value="$PROJECT_DIR$/src/com/rai/services/WeatherService.java" />
+        <option value="$PROJECT_DIR$/res/layout-land/activity_map.xml" />
+        <option value="$PROJECT_DIR$/res/layout/activity_map.xml" />
+        <option value="$PROJECT_DIR$/src/com/rai/MapActivity.java" />
+        <option value="$PROJECT_DIR$/res/layout/list_recommendation.xml" />
+        <option value="$PROJECT_DIR$/src/com/rai/WebActivity.java" />
         <option value="$PROJECT_DIR$/src/com/rai/entity/Venue.java" />
         <option value="$PROJECT_DIR$/src/com/rai/RecommendationActivity.java" />
-        <option value="$PROJECT_DIR$/src/com/rai/MapActivity.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="74" />
     <option name="y" value="22" />
-    <option name="width" value="1221" />
-    <option name="height" value="778" />
+    <option name="width" value="1861" />
+    <option name="height" value="1058" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -338,7 +286,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -407,28 +354,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rai" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="context" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rai" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rai" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="res" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -453,6 +378,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -465,7 +391,7 @@
     <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../rai-server" />
-    <property name="AndroidLayoutSelectedEditor" value="text-editor" />
+    <property name="AndroidLayoutSelectedEditor" value="android-designer" />
     <property name="project.structure.side.proportion" value="0.18997669" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="4df1c57618bd5f95" />
     <property name="MemberChooser.copyJavadoc" value="false" />
@@ -473,15 +399,18 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="MyAvd0" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/res/layout" />
+      <recent name="$PROJECT_DIR$/res/layout-port" />
+      <recent name="$PROJECT_DIR$/res/layout-land" />
       <recent name="$PROJECT_DIR$/src/com/rai/services" />
     </key>
   </component>
@@ -539,6 +468,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -565,19 +507,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -692,9 +621,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1221" height="778" extended-state="6" />
+    <frame x="74" y="22" width="1861" height="1058" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22479339" sideWeight="0.6705757" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24132231" sideWeight="0.6705757" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294702" sideWeight="0.6705757" order="4" side_tool="false" content_ui="tabs" />
@@ -708,21 +639,19 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46212122" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942432" sideWeight="0.49779248" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.52558637" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1647383" sideWeight="0.6748401" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1647383" sideWeight="0.47441363" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942432" sideWeight="0.49779248" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22479339" sideWeight="0.6748401" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24132231" sideWeight="0.6748401" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942432" sideWeight="0.49779248" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -786,127 +715,130 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/res/layout/activity_recommendation.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="44" selection-start="864" selection-end="864" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/activity_web.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="34" selection-start="307" selection-end="307" vertical-scroll-proportion="-5.5555553" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="28" selection-start="1708" selection-end="1708" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/rai/WebActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="12" selection-start="1565" selection-end="1565" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/rai/services/Weather.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="182" selection-start="423" selection-end="423" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/rai/context/ContextManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="49" selection-start="2155" selection-end="2155" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/list_recommendation.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="56" selection-start="3750" selection-end="3750" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Applications/adt-bundle-mac-x86_64/sdk/platforms/android-10/android.jar!/android/view/View.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="659" column="28" selection-start="28375" selection-end="28375" vertical-scroll-proportion="0.3322314" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/activity_recommendation.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="44" selection-start="864" selection-end="864" vertical-scroll-proportion="0.0">
+        <state line="56" column="70" selection-start="2068" selection-end="2068" vertical-scroll-proportion="1.0765392">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/rai/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="79" selection-start="742" selection-end="742" vertical-scroll-proportion="0.0">
+        <state line="23" column="87" selection-start="750" selection-end="750" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_web.xml">
+      <provider editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/drawable-hdpi/weather_partly_cloudy_day_48.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/drawable-hdpi/status_weather_clear_96.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/drawable-hdpi/status_weather_clouds_96.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/drawable-hdpi/weather_partly_cloudy_day_64.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout-land/activity_map.xml">
+      <provider editor-type-id="text-editor">
+        <state line="116" column="77" selection-start="7188" selection-end="7188" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_map.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="44" selection-start="824" selection-end="824" vertical-scroll-proportion="0.41811848">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/rai/MapActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="377" column="68" selection-start="11162" selection-end="11162" vertical-scroll-proportion="1.2452174">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/rai/services/WeatherService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="127" column="87" selection-start="4394" selection-end="4394" vertical-scroll-proportion="0.51913476">
+          <folding>
+            <element signature="e#2246#2262#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/list_recommendation.xml">
+      <provider editor-type-id="text-editor">
+        <state line="12" column="43" selection-start="586" selection-end="586" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/rai/WebActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="86" selection-start="1649" selection-end="1649" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/rai/entity/Recommendation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="15" selection-start="256" selection-end="256" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/rai/services/VenueService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="143" column="0" selection-start="4611" selection-end="4859" vertical-scroll-proportion="0.0">
+        <state line="11" column="16" selection-start="257" selection-end="257" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/rai/entity/Venue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="33" selection-start="953" selection-end="953" vertical-scroll-proportion="0.0">
+        <state line="30" column="31" selection-start="636" selection-end="636" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/rai/RecommendationActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="100" selection-start="3371" selection-end="3371" vertical-scroll-proportion="0.0">
+        <state line="267" column="37" selection-start="10504" selection-end="10504" vertical-scroll-proportion="0.5242967">
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#11313#11325#0" expanded="true" />
+            <element signature="e#2668#3270#0" expanded="true" />
+            <element signature="e#3250#3251#0" expanded="true" />
+            <element signature="e#3765#5383#0" expanded="true" />
+            <element signature="e#4312#4955#0" expanded="true" />
+            <element signature="e#4936#4937#0" expanded="true" />
+            <element signature="e#5372#5373#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/activity_map.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="168" column="101" selection-start="11628" selection-end="11628" vertical-scroll-proportion="-5.4528303">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/rai/MapActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="329" column="95" selection-start="10120" selection-end="10120" vertical-scroll-proportion="0.3587922">
-          <folding />
         </state>
       </provider>
     </entry>
